@@ -2368,3 +2368,10 @@ section {
   font-size: 13px;
   color: #012970;
 }
+.bts{
+  background: #4154f1;
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 4px;
+  color: #fff;
+}
