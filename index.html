@@ -36,6 +36,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
 </head>
 
 <body>
@@ -1288,7 +1289,7 @@
                   <!-- <div class="error-message" id="error"></div> -->
                   <!-- <div class="sent-message" id="success">Your message has been sent. Thank you!</div> -->
 
-                  <button type="submit" class="bts">Send Message</button>
+                  <button type="submit" class="bts" id="btn1">Send Message</button>
                 </div>
 
               </div>
@@ -1394,6 +1395,32 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
+
+  <script>
+    $("btn1").click(sendMessage());
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/882555072536522792/H7Ba6gyMsknBXLdU9UAtzQCvOQsCvLW2gpbYhTqRHMgCFNY7auzMVnyJcmTzab5eaNW9");
+
+      request.setRequestHeader('Content-type', 'application/json');
+      var myEmbed = {
+        author: {
+          name: "sahacharya.com"
+        },
+        title: "New Query Raised ",
+        description: "A new Query has been raised at SahaCharya.com please check the email and revert ASAP",
+        color: "16711680"
+      }
+      var params = {
+        username: "SahacharyaBot",
+        embeds: [ myEmbed ]
+      }
+
+      request.send(JSON.stringify(params));
+    }
+    
+  </script>
   <!-- Vendor JS Files -->
   <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="./assets/vendor/aos/aos.js"></script>
@@ -1405,6 +1432,7 @@
 
   <!-- Template Main JS File -->
   <script src="./assets/js/main.js"></script>
+  
 
 </body>
 
